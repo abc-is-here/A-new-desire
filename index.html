@@ -1,74 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A day in my life</title>
+    <title>A day in my life!</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-
 <body>
-
-    <div class="wrapper">
-        <div class="cover cover-left"></div>
-        <div class="cover cover-right turn"></div>
-        <div class="book">
-            <div class="book-page page-left">
-                <div class="profile-page">
-                    <img src="assets/IMG20220813090731.jpg" alt="Me sitting on a chair">
-                    <h1>Abhay Gupta</h1>
-                    <h3>I am everything you can think of!</h3>
-                    <div class="social-media">
-                        <a href="#"><i class='bx bxl-instagram-alt'></i></a>
-                        <a href="#"><i class='bx bxl-linkedin'></i></a>
-                        <a href="#"><i class='bx bxl-github'></i></a>
-                    </div>
-
-                    <p>Hiya!! I am Abhay Gupta, an aspiring web dev with a lot of technical skills, I can do almost
-                        everything and anything! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores
-                        itaque nisi ipsum quidem ducimus possimus repellat deserunt iusto ut, voluptas quod nesciunt
-                        magni aut quo fugit atque, temporibus qui natus.</p>
-                    <div class="btn-box">
-                        <a href="" class="btn">Contact me</a>
-                    </div>
+    <button id="prev-btn">
+        <i class='bx bxs-chevron-left-circle'></i>
+    </button>
+    <div id="book" class="book">
+        <div id="p1" class="paper flipped">
+            <div class="front">
+                <div id="f1" class="front-content">
+                    <h1>Front1</h1>
                 </div>
             </div>
-            <div class="book-page page-right" id="turn-1">
-
-                <div class="page-front">
-                    <h1 class="title">Work Experience</h1>
-                    <div class="workedu-box">
-                        <div class="workedu-content">
-                            <span class="year"><i class='bx bxs-calendar'></i>2023-24</span>
-                            <h3>Frontend-Web Developer</h3>
-                            <p>Will write something later. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Laboriosam vero quibusdam alias fuga, accusantium repellendus.</p>
-                        </div>
-                        <div class="workedu-content">
-                            <span class="year"><i class='bx bxs-calendar'></i>2023-24</span>
-                            <h3>Frontend-Web Developer</h3>
-                            <p>Will write something later. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Laboriosam vero quibusdam alias fuga, accusantium repellendus.</p>
-                        </div>
-                        <div class="workedu-content">
-                            <span class="year"><i class='bx bxs-calendar'></i>2023-24</span>
-                            <h3>Frontend-Web Developer</h3>
-                            <p>Will write something later. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Laboriosam vero quibusdam alias fuga, accusantium repellendus.</p>
-                        </div>
-                    </div>
+            <div class="back">
+                <div id="b1" class="back-content">
+                    <h1>Back1</h1>
                 </div>
-                <div class="page-back">
-                    <h1 class="title">Education</h1>
+            </div>
+        </div>
+        <div id="p2" class="paper">
+            <div class="front">
+                <div id="f2" class="front-content">
+                    <h1>Front2</h1>
                 </div>
-
+            </div>
+            <div class="back">
+                <div id="b2" class="back-content">
+                    <h1>Back2</h1>
+                </div>
+            </div>
+        </div>
+        <div id="p3" class="paper">
+            <div class="front">
+                <div id="f3" class="front-content">
+                    <h1>Front3</h1>
+                </div>
+            </div>
+            <div class="back">
+                <div id="b3" class="back-content">
+                    <h1>Back3</h1>
+                </div>
             </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
+    <button id="next-btn">
+        <i class='bx bxs-chevron-right-circle'></i>
+    </button>
 </body>
-
 </html>

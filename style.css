@@ -1,193 +1,94 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-decoration: none;
-  border: none;
-  outline: none;
-  font-family: "Poppins", sans-serif;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-:root {
-  --bg-color: #081b29;
-  --main-color: #00abf0;
-  --text-color: #333;
-  --second-text-color: #555;
-  --white-color: #fff;
-  --cover-color: linear-gradient(45deg, #00abf0, #006e9a);
-  --pages-color: linear-gradient(90deg, #fff, #ddd);
-  --border: 0.125rem solid #00abf0;
-  --box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.2);
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: var(--bg-color);
-  color: var(--text-color);
-}
-
-.wrapper {
-  position: relative;
-  width: 66rem;
-  height: 45rem;
-  padding: 2rem;
-}
-
-.cover.cover-left {
-  z-index: -1;
-}
-
-.cover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background: var(--cover-color);
-  box-shadow: var(--box-shadow);
-  border-top-left-radius: 0.6rem;
-  border-bottom-left-radius: 0.6rem;
-  transform-origin: right;
-}
-
-.cover.cover-right.turn {
-  transform: rotateY(180deg);
-}
-
-.book {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
-
-.book .book-page {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  background: var(--pages-color);
-  box-shadow: var(--box-shadow);
-  display: flex;
-  overflow: hidden;
-  padding: 2rem;
-}
-
-.profile-page{
+body{
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: powderblue;
 }
 
-.profile-page img{
-    max-width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    margin-bottom: 0.8rem;
-    border: .25rem solid var(--main-color);
+.book{
+    position: relative;
+    width: 350px;
+    height: 500px;
 }
 
-.profile-page h1{
-    font-size: 2.5rem;
-    line-height: 1;
-    margin-bottom: 0.6rem;
-}
-
-.profile-page h3{
-    font-size: 1.5rem;
-    line-height: 1;
-    color: var(--main-color);
-}
-
-.profile-page .social-media{
-    margin: .6rem 0 .8rem;
-}
-
-.profile-page .social-media a{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 1.3rem;
-    background: transparent;
-    border: var(--border);
-    border-radius: 50%;
-    color: var(--main-color);
-    margin: 0 .2rem;
-    transition: all .3s ease;
-}
-
-.profile-page .social-media a:hover{
-    background: var(--main-color);
-    color: var(--white-color);
-}
-
-.profile-page p{
-    text-align: justify;
-}
-
-.profile-page .btn-box{
-    margin-top: 1.2rem;
-}
-
-.btn{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: .6rem 1.2rem;
-    font-size: 1.2rem;
-    background: transparent;
-    color: var(--main-color);
-    border-radius: .3rem;
-    margin-top: 1rem;
-    border: 2px solid var(--main-color);
-    transition: all .3s ease;
-}
-
-.btn:hover{
-    background: var(--main-color);
-    color: var(--white-color);
-}
-
-.book-page.page-right{
-    position: absolute;
-    right: 0;
-    transform-style: preserve-3d;
-}
-
-.book-page .page-front,
-.book-page .page-back{
+.paper{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: var(--pages-color);
     top: 0;
     left: 0;
-    padding: 1.5rem 2rem;
+    perspective: 1500px;
 }
 
-.book-page .page-front{
+.front, .back{
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.front{
     z-index: 1;
-    transform: rotateY(0deg);
+    backface-visibility: hidden;
 }
 
-.book-page .page-back{
+.back{
     z-index: 0;
+}
+
+.front-content,
+.back-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:focus{
+    outline: none;
+}
+
+button:hover{
+    color: seashell;
+}
+
+i{
+    font-size: 50px;
+}
+
+#p1{
+    z-index: 3;
+}
+
+#p2{
+    z-index: 2;
+}
+
+#p3{
+    z-index: 1;
+}
+
+.flipped .front,
+.flipped .back{
     transform: rotateY(-180deg);
-}
-
-.title{
-    text-align: center;
-    margin-bottom: 1.2rem;
-}
-
-.workedu-content .year{
-    font-size: 1.2rem;
-    color: var(--main-color);
 }
